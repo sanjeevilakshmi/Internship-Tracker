@@ -1,5 +1,3 @@
-this is the application link to access : http://127.0.0.1:8000/
-
 # 🧭 Online Internship Tracker with Daily Logs & Mentor Feedback  
 
 A **Django-based web application** that allows students to log their **daily internship tasks**, and mentors to provide **weekly feedback**.  

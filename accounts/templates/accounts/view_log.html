@@ -1,0 +1,24 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h4>{{ log.task_title }}</h4>
+  <p>{{ log.task_description }}</p>
+  <p>Status: {{ log.status }}</p>
+  <p>Created at: {{ log.created_at }}</p>
+
+  <hr>
+  <h5>Feedback</h5>
+  {% if feedbacks %}
+    <ul>
+      {% for fb in feedbacks %}
+        <li><strong>{{ fb.mentor.username }}:</strong> {{ fb.comment }} <em>on {{ fb.created_at }}</em></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No feedback yet.</p>
+  {% endif %}
+
+  <a href="{% url 'add_feedback' log.id %}" class="btn btn-outline-primary">Add Feedback</a>
+</div>
+{% endblock %}
+

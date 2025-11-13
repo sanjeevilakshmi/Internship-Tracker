@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delete Log</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+  <h2>Are you sure you want to delete this log?</h2>
+  <p><strong>{{ log.task_title }}</strong></p>
+  <p>{{ log.task_description }}</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'user_logs' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+</body>
+</html>

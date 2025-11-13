@@ -1,0 +1,53 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit Daily Log</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">Submit Daily Log</h2>
+
+    <form method="POST" class="needs-validation" novalidate>
+      {% csrf_token %}
+      
+      <div class="mb-3">
+        <label for="id_task_title" class="form-label">Task Title</label>
+        {{ form.task_title|add_class:"form-control" }}
+      </div>
+
+      <div class="mb-3">
+        <label for="id_task_description" class="form-label">Task Description</label>
+        {{ form.task_description|add_class:"form-control" }}
+      </div>
+
+      <div class="mb-3">
+        <label for="id_status" class="form-label">Status</label>
+        {{ form.status|add_class:"form-select" }}
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="{% url 'user_logs' %}" class="btn btn-secondary ms-2">Back to Logs</a>
+    </form>
+  </div>
+
+  <script>
+    // Bootstrap validation (optional)
+    (function () {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+{% extends 'accounts/base.html' %}
+{% block title %}My Feedback{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Feedback on Your Work</h2>
+  {% if feedbacks %}
+    <ul class="list-group">
+      {% for fb in feedbacks %}
+        <li class="list-group-item">
+          <strong>Task:</strong> {{ fb.log.task_title }}<br>
+          <strong>Mentor:</strong> {{ fb.mentor.username }}<br>
+          <strong>Feedback:</strong> {{ fb.feedback }}<br>
+          <small class="text-muted">On {{ fb.created_at|date:"M d, Y H:i" }}</small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-muted">No feedback received yet.</p>
+  {% endif %}
+</div>
+{% endblock %}
+

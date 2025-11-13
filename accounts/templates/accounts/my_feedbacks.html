@@ -1,0 +1,22 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>My Feedbacks</h2>
+
+  {% if feedbacks %}
+    <ul class="list-group">
+      {% for fb in feedbacks %}
+        <li class="list-group-item">
+          <strong>Task:</strong> {{ fb.log.task_title }}<br>
+          <strong>Feedback:</strong> {{ fb.comment }}<br>
+          <small class="text-muted">on {{ fb.created_at|date:"M d, Y H:i" }}</small><br>
+          <a href="{% url 'edit_feedback' fb.id %}" class="btn btn-sm btn-outline-primary">Edit</a>
+          <a href="{% url 'delete_feedback' fb.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-muted">You haven't written any feedback yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

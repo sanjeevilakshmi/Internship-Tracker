@@ -136,8 +136,8 @@ internship_tracker/
 
 ## 👩‍💻 Author
 **Sanjeevi Lakshmi Lavanya**  
-🎓 B.Tech (4th Year) | Web Development & Cloud Enthusiast  
-💼 Skills: Django, HTML, Bootstrap, MySQL, AWS
+🎓 B.Tech (4th Year) | Web Development  
+💼 Skills: Django, HTML, Bootstrap, MySQL
 📧 Email: 228r1a1252@gmail.com  
 🌐 GitHub: [https://github.com/sanjeevilakshmi](https://github.com/sanjeevilakshmi)
 

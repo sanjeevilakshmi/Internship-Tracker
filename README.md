@@ -39,7 +39,7 @@ Follow these steps to run the project locally 👇
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/online-internship-tracker.git
+git clone https://github.com/sanjeevilakshmi/online-internship-tracker.git
 cd online-internship-tracker
 ```
 
